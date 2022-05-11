@@ -1,0 +1,6 @@
+{
+  "require": {
+    "rmccue/requests": "^2.0",
+    "imangazaliev/didom": "^2.0"
+  }
+}
