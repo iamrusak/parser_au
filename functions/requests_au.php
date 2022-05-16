@@ -25,6 +25,9 @@ function get_response($search_word)
 	$result = array();
 
 	$first_response = \WpOrg\Requests\Requests::post('https://search.ipaustralia.gov.au/trademarks/search/doSearch', $headers, $data);
+	if(!is_dir('temp/') && !file_exists('temp')){
+		mkdir('temp');
+	}
 	file_put_contents('temp/response_main.html', $first_response->body);
 
 	$document_main = new DiDom\Document('temp/response_main.html', true);
